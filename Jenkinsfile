@@ -3,26 +3,26 @@ pipeline {
   stages {
     stage('Compile') {
       steps {
-        sh 'echo "This is the compile step"'
+        echo 'This is a compile step'
       }
     }
-    stage('UnitTest') {
+    stage('UITest') {
       parallel {
-        stage('UnitTest') {
-          steps {
-            sh 'echo "This is the Unit test"'
-          }
-        }
         stage('UITest') {
           steps {
-            sh 'echo "This is the UI test"'
+            echo 'This is the UI test'
+          }
+        }
+        stage('UnitTest') {
+          steps {
+            echo 'This is the unit test'
           }
         }
       }
     }
     stage('Deploy') {
       steps {
-        sh 'echo "This is the deploy step"'
+        echo 'this is the deploy stage'
       }
     }
   }
