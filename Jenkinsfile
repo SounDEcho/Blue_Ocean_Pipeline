@@ -24,7 +24,7 @@ pipeline {
       parallel {
         stage('Assemble') {
           steps {
-            bat 'ech this is the assemble stage'
+            bat 'echo this is the assemble stage'
           }
         }
         stage('link') {
